@@ -1218,17 +1218,17 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string></string>
+			<string>C02740701QXJ1JHUE</string>
 			<key>ROM</key>
-			<data></data>
+			<data>3F3C217AF437</data>
 			<key>SpoofVendor</key>
 			<false/>
 			<key>SystemProductName</key>
 			<string>MacBookPro14,3</string>
 			<key>SystemSerialNumber</key>
-			<string></string>
+			<string>C02VH7Y0HTD5</string>
 			<key>SystemUUID</key>
-			<string></string>
+			<string>E2BEF2A6-4080-4343-BF2E-9D8ECA7AF437</string>
 		</dict>
 		<key>SMBIOS</key>
 		<dict>
@@ -1247,7 +1247,7 @@
 			<key>BoardProduct</key>
 			<string>Mac-551B86E5744E2388</string>
 			<key>BoardSerialNumber</key>
-			<string></string>
+			<string>C02740701QXJ1JHUE</string>
 			<key>BoardType</key>
 			<integer>10</integer>
 			<key>BoardVersion</key>
@@ -1257,7 +1257,7 @@
 			<key>ChassisManufacturer</key>
 			<string>Dell Inc.</string>
 			<key>ChassisSerialNumber</key>
-			<string></string>
+			<string>C02T43YRHTD5</string>
 			<key>ChassisType</key>
 			<integer>9</integer>
 			<key>ChassisVersion</key>
@@ -1283,9 +1283,9 @@
 			<key>SystemSKUNumber</key>
 			<string></string>
 			<key>SystemSerialNumber</key>
-			<string></string>
+			<string>C02VH7Y0HTD5</string>
 			<key>SystemUUID</key>
-			<string></string>
+			<string>E2BEF2A6-4080-4343-BF2E-9D8ECA7AF437</string>
 			<key>SystemVersion</key>
 			<string>1.0</string>
 		</dict>
