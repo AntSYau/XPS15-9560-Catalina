@@ -9,68 +9,7 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "PCID", 0x00000000)
     
     If (_OSI ("Darwin"))
     {
-        Scope (_SB.PCI0.LPCB)
-        {
-            Device (DMAC)
-            {
-                Name (_HID, EisaId ("PNP0200") /* PC-class DMA Controller */)  // _HID: Hardware ID
-                Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-                {
-                    IO (Decode16,
-                        0x0000,             // Range Minimum
-                        0x0000,             // Range Maximum
-                        0x01,               // Alignment
-                        0x20,               // Length
-                        )
-                    IO (Decode16,
-                        0x0081,             // Range Minimum
-                        0x0081,             // Range Maximum
-                        0x01,               // Alignment
-                        0x11,               // Length
-                        )
-                    IO (Decode16,
-                        0x0093,             // Range Minimum
-                        0x0093,             // Range Maximum
-                        0x01,               // Alignment
-                        0x0D,               // Length
-                        )
-                    IO (Decode16,
-                        0x00C0,             // Range Minimum
-                        0x00C0,             // Range Maximum
-                        0x01,               // Alignment
-                        0x20,               // Length
-                        )
-                    DMA (Compatibility, NotBusMaster, Transfer8_16, )
-                        {4}
-                })
-            }
-            Device (EC)
-            {
-                Name (_HID, "ACID0001")
-                Method (_STA, 0, NotSerialized)
-                {
-                    Return (0x0F)
-                }
-            }
-            Device (PMCR)
-            {
-                Name (_HID, EisaId ("APP9876"))
-                Name (_CRS, ResourceTemplate ()
-                {
-                    Memory32Fixed (ReadWrite,
-                        0xFE000000,
-                        0x00010000 
-                        )
-
-                })
-                Method (_STA, 0, NotSerialized)
-                {
-                    Return (0x0B)
-                }
-            }
-        }
-
-        Scope (_SB.PCI0)
+        Scope (\_SB.PCI0)
         {
             Device (MCHC)
             {
@@ -109,6 +48,57 @@ DefinitionBlock ("", "SSDT", 2, "DXPS", "PCID", 0x00000000)
                     Method (_STA, 0, NotSerialized)
                     {
                         Return (0x0F)
+                    }
+                }
+            }
+            Scope (LPCB)
+            {
+                Device (DMAC)
+                {
+                    Name (_HID, EisaId ("PNP0200") /* PC-class DMA Controller */)  // _HID: Hardware ID
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                    {
+                        IO (Decode16,
+                            0x0000,             // Range Minimum
+                            0x0000,             // Range Maximum
+                            0x01,               // Alignment
+                            0x20,               // Length
+                            )
+                        IO (Decode16,
+                            0x0081,             // Range Minimum
+                            0x0081,             // Range Maximum
+                            0x01,               // Alignment
+                            0x11,               // Length
+                            )
+                        IO (Decode16,
+                            0x0093,             // Range Minimum
+                            0x0093,             // Range Maximum
+                            0x01,               // Alignment
+                            0x0D,               // Length
+                            )
+                        IO (Decode16,
+                            0x00C0,             // Range Minimum
+                            0x00C0,             // Range Maximum
+                            0x01,               // Alignment
+                            0x20,               // Length
+                            )
+                        DMA (Compatibility, NotBusMaster, Transfer8_16, )
+                            {4}
+                    })
+                }
+                Device (PMCR)
+                {
+                    Name (_HID, EisaId ("APP9876"))
+                    Name (_CRS, ResourceTemplate ()
+                    {
+                        Memory32Fixed (ReadWrite,
+                            0xFE000000,
+                            0x00010000 
+                            )
+                    })
+                    Method (_STA, 0, NotSerialized)
+                    {
+                        Return (0x0B)
                     }
                 }
             }
